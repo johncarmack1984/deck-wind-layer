@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deck-wind-layer</title>
+    <style>
+      html, body, #app { margin: 0; height: 100%; width: 100%; overflow: hidden; }
+      #app { background: #0b1020; }
+      #hud {
+        position: absolute; top: 10px; left: 10px; z-index: 1;
+        font: 12px ui-monospace, Menlo, monospace; color: #cdd6f4;
+        background: rgba(11,16,32,0.7); padding: 8px 10px; border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="hud">deck-wind-layer — drag/scroll to test camera-sync</div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

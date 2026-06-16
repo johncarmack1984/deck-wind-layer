@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+*.tgz
+.DS_Store
+
+# Local-only assistant context — never commit (this repo is public-bound).
+CLAUDE.md
+.claude/

@@ -1,0 +1,21 @@
+layout(std140) uniform windUniforms {
+  float uMin;
+  float uMax;
+  float vMin;
+  float vMax;
+  float speedFactor;
+  float dropRate;
+  float dropRateBump;
+  float randSeed;
+  float pointSize;
+  float colorR;
+  float colorG;
+  float colorB;
+  float alphaScale;
+  float maxSpeed;
+  float maxAge;
+  float viewX0;
+  float viewW;
+  float viewY0;
+  float viewY1;
+} wind;

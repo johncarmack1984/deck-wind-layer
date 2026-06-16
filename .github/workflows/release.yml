@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One release at a time.
+concurrency: ${{ github.workflow }}
+
+# Nothing by default; the job opts into exactly what it needs.
+permissions: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # changesets pushes version-bump commits / tags
+      pull-requests: write # ...and opens the "Version Packages" PR
+      id-token: write # npm OIDC trusted publishing (no NPM_TOKEN secret)
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # OIDC trusted publishing needs npm >= 11.5.1; pin to latest to be safe.
+      - run: npm install -g npm@latest
+      # With changesets present -> opens/updates the Version Packages PR.
+      # With none present -> runs `release` (build + `changeset publish`), which
+      # publishes any package whose version isn't yet on the registry.
+      - uses: changesets/action@v1
+        with:
+          version: pnpm changeset version
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

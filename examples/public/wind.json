@@ -1,0 +1,9 @@
+{
+  "width": 1440,
+  "height": 721,
+  "uMin": -40,
+  "uMax": 40,
+  "vMin": -40,
+  "vMax": 40,
+  "note": "Sample GFS 10 m UGRD/VGRD frame (NOAA, public domain). Equirectangular RGB: R = u, G = v, each normalized over [-40, 40] m/s. Row 0 = 90N, column 0 = 0E."
+}

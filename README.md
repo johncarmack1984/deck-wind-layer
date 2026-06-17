@@ -1,5 +1,10 @@
 # deck-wind-layer
 
+[![npm version](https://img.shields.io/npm/v/deck-wind-layer.svg)](https://www.npmjs.com/package/deck-wind-layer)
+[![MIT License](https://img.shields.io/npm/l/deck-wind-layer.svg)](./LICENSE)
+
+**▶ [Live demo](https://johncarmack1984.github.io/deck-wind-layer/)** — drag and zoom the map; the particles stay glued to the geography.
+
 A [deck.gl](https://deck.gl) **v9** layer that renders a Windy-style animated
 wind field: particles advected on the GPU through a u/v wind texture, drawn as
 fading comet trails, and **projected through deck's `project32` so they track

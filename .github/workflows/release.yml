@@ -15,11 +15,21 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # changesets pushes version-bump commits / tags
-      pull-requests: write # ...and opens the "Version Packages" PR
+      contents: read # checkout + install only; the App token below does the writes
       id-token: write # npm OIDC trusted publishing (no NPM_TOKEN secret)
     steps:
+      # Mint a short-lived token from the release GitHub App so the "Version
+      # Packages" PR is opened by a non-bot identity -> CI runs on it without a
+      # manual "approve workflows" click. The App needs Contents + Pull requests
+      # write and must be installed on this repo.
+      - uses: actions/create-github-app-token@v3
+        id: app-token
+        with:
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
       - uses: actions/checkout@v6
+        with:
+          token: ${{ steps.app-token.outputs.token }} # push the branch as the App
       - uses: pnpm/action-setup@v6
         with:
           version: 10
@@ -38,4 +48,6 @@ jobs:
           version: pnpm changeset version
           publish: pnpm release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # App token (not secrets.GITHUB_TOKEN) so the PR/commits come from the
+          # App identity and trigger CI.
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}

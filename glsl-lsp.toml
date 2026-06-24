@@ -1,0 +1,31 @@
+# Config for glslint, a luma.gl/deck.gl-aware GLSL checker + LSP.
+# Mirrors the `new Model({ modules: [...] })` bindings in src/WindLayer.ts so each
+# shader is validated against exactly the modules it uses at link time. Without
+# this file glslint auto-derives those bindings from the Model() calls; it's kept
+# for the `types` drift cross-check below (modules.ts uniformTypes vs the GLSL UBO).
+
+[[module]]
+name = "windUniforms"
+source = "src/shaders/windUniforms.glsl"
+types = "src/modules.ts"   # cross-check the UBO block against modules.ts uniformTypes
+
+[[module]]
+name = "blitUniforms"
+source = "src/shaders/blitUniforms.glsl"
+types = "src/modules.ts"
+
+[[module]]
+name = "project32"
+builtin = true            # deck.gl project32 builtins (resolved from node_modules)
+
+[[shader]]
+match   = "draw.*.glsl"
+modules = ["project32", "windUniforms"]
+
+[[shader]]
+match   = "update.*.glsl"
+modules = ["windUniforms"]
+
+[[shader]]
+match   = "blit.*.glsl"
+modules = ["blitUniforms"]

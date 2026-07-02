@@ -1,0 +1,29 @@
+# seo-kit per-repo config (scaffolded by `seo-kit setup`).
+# This file makes the repo a saved surface: `seo-kit audit johncarmack1984.github.io` runs the
+# full configured provider set from any directory inside the repo and writes
+# reports to reports_dir below (committed reports give you the trend history the
+# Measure phase needs). Secrets and provider enablement stay in the seo-kit tool
+# home — this file is safe to commit. Add more [[surface]] blocks as needed.
+
+[seokit]
+reports_dir = "seo-reports"
+
+[[surface]]
+id = "deck-wind-layer"
+url = "https://johncarmack1984.github.io/deck-wind-layer/"
+kind = "site"
+# Each field below unlocks a provider for this target; fill what applies.
+# gsc_property = "sc-domain:johncarmack1984.github.io"  # Search Console queries; uncomment once the property is verified
+github_repo = "johncarmack1984/deck-wind-layer"  # GitHub repo topics / description / traffic signals
+positioning = "deck-wind-layer is a small MIT npm package: a deck.gl v9 / luma.gl v9 layer rendering a Windy-style animated wind map (GPU-advected particles, comet trails) that stays camera-synced via project32; live GitHub Pages demo, by johncarmack1984."
+# seed_keywords = []  # unlocks trends (free) + dataforseo volume / serper SERP position (keyed)
+
+# GEO probe (LLM citation + namesake disambiguation). Needs surface_markers +
+# geo_probes; namesake_markers and cite_domains are optional (cite_domains
+# defaults to the surface's domain).
+# surface_markers = []  # strings that prove an answer is about THIS entity (handles, product names, domains)
+# namesake_markers = []  # strings that prove the answer drifted to a namesake
+# cite_domains = ["johncarmack1984.github.io"]
+# geo_probes = [
+#     "Who or what is ... and what do they build?",
+# ]

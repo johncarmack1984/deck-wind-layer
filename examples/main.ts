@@ -54,6 +54,10 @@ window.addEventListener('unhandledrejection', (e) =>
 const app = document.getElementById('app');
 if (!app) throw new Error('#app not found');
 
+// The static crawler/loading shell in index.html: Deck appends its canvas
+// into the parent without clearing it, so remove the shell explicitly.
+document.getElementById('shell')?.remove();
+
 const deck = new Deck({
   parent: app as HTMLDivElement,
   initialViewState: { longitude: 0, latitude: 25, zoom: 1.3 },

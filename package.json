@@ -1,7 +1,7 @@
 {
   "name": "deck-wind-layer",
   "version": "0.1.1",
-  "description": "A deck.gl v9 wind-particle layer — GPU advection, fading comet trails, camera-synced, with constant on-screen density at any zoom.",
+  "description": "A deck.gl v9 wind-particle layer: GPU advection, fading comet trails, camera-synced, with constant on-screen density at any zoom.",
   "license": "MIT",
   "author": "John Carmack",
   "type": "module",

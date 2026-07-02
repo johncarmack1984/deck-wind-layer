@@ -3,13 +3,9 @@
 [![npm version](https://img.shields.io/npm/v/deck-wind-layer.svg)](https://www.npmjs.com/package/deck-wind-layer)
 [![MIT License](https://img.shields.io/npm/l/deck-wind-layer.svg)](./LICENSE)
 
-**▶ [Live demo](https://johncarmack1984.github.io/deck-wind-layer/)**: drag and zoom the map; the particles stay glued to the geography.
+▶ [Live demo](https://johncarmack1984.github.io/deck-wind-layer/): drag and zoom the map; the particles stay glued to the geography.
 
-A [deck.gl](https://deck.gl) **v9** layer that renders a Windy-style animated
-wind field: particles advected on the GPU through a u/v wind texture, drawn as
-fading comet trails, and **projected through deck's `project32` so they track
-the web-mercator camera** at any zoom/pan. Clean-room port of the technique in
-[`mapbox/webgl-wind`](https://github.com/mapbox/webgl-wind) (ISC).
+A [deck.gl](https://deck.gl) v9 layer that renders a Windy-style animated wind field: particles advected on the GPU through a u/v wind texture, drawn as fading comet trails, and projected through deck's `project32` so they track the web-mercator camera at any zoom/pan. Clean-room port of the technique in [`mapbox/webgl-wind`](https://github.com/mapbox/webgl-wind) (ISC).
 
 The camera-synced part is the bit that's missing from the public domain: there
 are WebGL demos of the particle effect, but no small, MIT, deck-v9-native layer
@@ -21,7 +17,7 @@ that just drops onto a map.
 npm i deck-wind-layer
 ```
 
-deck.gl and luma.gl are **peer dependencies** (v9.3+). Bring your own:
+deck.gl and luma.gl are peer dependencies (v9.3+). Bring your own:
 
 ```bash
 npm i @deck.gl/core @luma.gl/core @luma.gl/engine
@@ -125,22 +121,14 @@ view)`, so it's a crowded mess zoomed out and sparse zoomed in. Per-zoom presets
 don't rescue this. Keeping a zoomed-in view dense with global seeding would need
 `N` to grow like `4^zoom`.
 
-Instead, particles **seed and respawn inside the current viewport** (advection
-and the wind lookup still happen in global equirectangular space, so it stays
-physically correct; only the spawn bounds are view-relative), and any particle
-that drifts out of the margin-expanded view is recycled back in. So every
-particle is always on screen and `numParticles` becomes a **screen density that
-holds constant at any zoom**. The layer reads the viewport each frame; pan/zoom
-hard and the field refills the newly revealed area within a second or so.
+Instead, particles seed and respawn inside the current viewport (advection and the wind lookup still happen in global equirectangular space, so it stays physically correct; only the spawn bounds are view-relative), and any particle that drifts out of the margin-expanded view is recycled back in. So every particle is always on screen and `numParticles` becomes a screen density that holds constant at any zoom. The layer reads the viewport each frame; pan/zoom hard and the field refills the newly revealed area within a second or so.
 
 ## Pooling (and the `maxAge` fix)
 
 Low respawn gives long, clean streaks, but with particles long-lived, flow
 convergence sweeps them into dense clumps with empty voids between (pooling).
 You can't just raise the random respawn rate without chopping the streaks short.
-The fix is a per-particle **lifetime** (`maxAge`, frames): every particle resets
-to a fresh uniform position at least that often, with ages seeded staggered so
-resets spread smoothly across frames instead of pulsing. That bounds how far any
+The fix is a per-particle lifetime (`maxAge`, frames): every particle resets to a fresh uniform position at least that often, with ages seeded staggered so resets spread smoothly across frames instead of pulsing. That bounds how far any
 particle can drift before re-uniformizing, so convergence can't accumulate
 indefinitely. Set `maxAge` at or above the trail's fade window (`fadeOpacity`)
 and the streaks stay full-length while the field stays even.

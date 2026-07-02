@@ -1,0 +1,311 @@
+{
+  "surface": {
+    "id": "deck-wind-layer",
+    "url": "https://johncarmack1984.github.io/deck-wind-layer/",
+    "kind": "site",
+    "gsc_property": null,
+    "github_repo": "johncarmack1984/deck-wind-layer",
+    "positioning": "deck-wind-layer is a small MIT npm package: a deck.gl v9 / luma.gl v9 layer rendering a Windy-style animated wind map (GPU-advected particles, comet trails) that stays camera-synced via project32; live GitHub Pages demo, by johncarmack1984.",
+    "seed_keywords": [],
+    "surface_markers": [],
+    "namesake_markers": [],
+    "geo_probes": [],
+    "cite_domains": []
+  },
+  "results": [
+    {
+      "provider": "crawl",
+      "tier": 0,
+      "status": "ok",
+      "signals": [
+        {
+          "key": "final_url",
+          "value": "https://johncarmack1984.github.io/deck-wind-layer/",
+          "note": ""
+        },
+        {
+          "key": "status",
+          "value": 200,
+          "note": ""
+        },
+        {
+          "key": "title",
+          "value": "deck-wind-layer",
+          "note": ""
+        },
+        {
+          "key": "title_len",
+          "value": 15,
+          "note": ""
+        },
+        {
+          "key": "meta_description",
+          "value": "",
+          "note": ""
+        },
+        {
+          "key": "canonical",
+          "value": null,
+          "note": ""
+        },
+        {
+          "key": "html_lang",
+          "value": "en",
+          "note": ""
+        },
+        {
+          "key": "og_tags",
+          "value": 0,
+          "note": ""
+        },
+        {
+          "key": "twitter_tags",
+          "value": 0,
+          "note": ""
+        },
+        {
+          "key": "h1_raw",
+          "value": [],
+          "note": ""
+        },
+        {
+          "key": "raw_html_words",
+          "value": 7,
+          "note": ""
+        },
+        {
+          "key": "jsonld_types_raw",
+          "value": [],
+          "note": ""
+        },
+        {
+          "key": "rendered",
+          "value": "skipped (install 'render' extra for the JS-gap)",
+          "note": ""
+        },
+        {
+          "key": "robots_txt",
+          "value": "404",
+          "note": ""
+        },
+        {
+          "key": "sitemap_xml",
+          "value": "404",
+          "note": ""
+        }
+      ],
+      "findings": [
+        {
+          "severity": "medium",
+          "code": "description.missing",
+          "message": "No meta description."
+        },
+        {
+          "severity": "low",
+          "code": "canonical.missing",
+          "message": "No rel=canonical link."
+        },
+        {
+          "severity": "high",
+          "code": "schema.missing",
+          "message": "No JSON-LD structured data in server HTML (no Person/ProfilePage entity for Google or LLMs)."
+        },
+        {
+          "severity": "high",
+          "code": "render.thin_shell",
+          "message": "Server HTML has only 7 words of text - looks like an unprerendered SPA shell (install the 'render' extra to quantify the JS-gap precisely)."
+        },
+        {
+          "severity": "medium",
+          "code": "sitemap.missing",
+          "message": "No /sitemap.xml (200)."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "psi",
+      "tier": 0,
+      "status": "ok",
+      "signals": [
+        {
+          "key": "performance_score",
+          "value": 69,
+          "note": ""
+        },
+        {
+          "key": "LCP",
+          "value": "0.8\u00a0s",
+          "note": ""
+        },
+        {
+          "key": "CLS",
+          "value": "0",
+          "note": ""
+        },
+        {
+          "key": "TBT",
+          "value": "3,780\u00a0ms",
+          "note": ""
+        },
+        {
+          "key": "SpeedIndex",
+          "value": "3.8\u00a0s",
+          "note": ""
+        }
+      ],
+      "findings": [
+        {
+          "severity": "medium",
+          "code": "psi.performance",
+          "message": "Mobile performance score 69 (<90)."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "gsc",
+      "tier": 0,
+      "status": "skipped",
+      "signals": [],
+      "findings": [
+        {
+          "severity": "low",
+          "code": "gsc.no_property",
+          "message": "surface has no gsc_property set."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "github",
+      "tier": 0,
+      "status": "ok",
+      "signals": [
+        {
+          "key": "description",
+          "value": "A deck.gl v9 wind-particle layer \u2014 GPU advection, fading comet trails, camera-synced, with constant on-screen density at any zoom.",
+          "note": ""
+        },
+        {
+          "key": "topics",
+          "value": [],
+          "note": ""
+        },
+        {
+          "key": "stars",
+          "value": 0,
+          "note": ""
+        },
+        {
+          "key": "homepage",
+          "value": "https://johncarmack1984.github.io/deck-wind-layer/",
+          "note": ""
+        },
+        {
+          "key": "views_14d",
+          "value": 6,
+          "note": ""
+        },
+        {
+          "key": "uniques_14d",
+          "value": 1,
+          "note": ""
+        }
+      ],
+      "findings": [
+        {
+          "severity": "medium",
+          "code": "github.no_topics",
+          "message": "repo has no topics (GitHub search keywords - add your niche terms)."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "bing",
+      "tier": 0,
+      "status": "error",
+      "signals": [],
+      "findings": [],
+      "error": "ReadTimeout: The read operation timed out",
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "trends",
+      "tier": 0,
+      "status": "skipped",
+      "signals": [],
+      "findings": [
+        {
+          "severity": "low",
+          "code": "trends.no_seeds",
+          "message": "surface has no seed_keywords."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "dataforseo",
+      "tier": 1,
+      "status": "skipped",
+      "signals": [],
+      "findings": [],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "serper",
+      "tier": 1,
+      "status": "skipped",
+      "signals": [],
+      "findings": [
+        {
+          "severity": "low",
+          "code": "serper.no_seeds",
+          "message": "surface has no seed_keywords; skipping."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    },
+    {
+      "provider": "geo_probe",
+      "tier": 2,
+      "status": "skipped",
+      "signals": [],
+      "findings": [
+        {
+          "severity": "low",
+          "code": "geo.no_config",
+          "message": "set surface_markers + geo_probes on the surface (surfaces.toml) to run GEO probes; skipping."
+        }
+      ],
+      "error": null,
+      "stub_adds": null,
+      "stub_env": [],
+      "stub_contract": null
+    }
+  ]
+}

@@ -3,7 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>deck-wind-layer</title>
+    <title>deck-wind-layer · animated WebGL wind map layer for deck.gl v9</title>
+    <meta
+      name="description"
+      content="A small MIT deck.gl v9 layer for Windy-style animated wind maps: GPU-advected particles with comet trails, camera-synced at any zoom. npm i deck-wind-layer."
+    />
+    <link rel="canonical" href="https://johncarmack1984.github.io/deck-wind-layer/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="deck-wind-layer" />
+    <meta property="og:title" content="deck-wind-layer · animated WebGL wind map layer for deck.gl v9" />
+    <meta
+      property="og:description"
+      content="A small MIT deck.gl v9 layer for Windy-style animated wind maps: GPU-advected particles with comet trails, camera-synced at any zoom. npm i deck-wind-layer."
+    />
+    <meta property="og:url" content="https://johncarmack1984.github.io/deck-wind-layer/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="deck-wind-layer · animated WebGL wind map layer for deck.gl v9" />
+    <meta
+      name="twitter:description"
+      content="A small MIT deck.gl v9 layer for Windy-style animated wind maps: GPU-advected particles with comet trails, camera-synced at any zoom. npm i deck-wind-layer."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "deck-wind-layer",
+        "url": "https://johncarmack1984.github.io/deck-wind-layer/",
+        "description": "A deck.gl v9 wind-particle layer: GPU advection, fading comet trails, camera-synced via project32, with constant on-screen density at any zoom.",
+        "codeRepository": "https://github.com/johncarmack1984/deck-wind-layer",
+        "programmingLanguage": "TypeScript",
+        "runtimePlatform": "Web browser (WebGL2)",
+        "license": "https://github.com/johncarmack1984/deck-wind-layer/blob/main/LICENSE",
+        "sameAs": ["https://www.npmjs.com/package/deck-wind-layer"],
+        "author": {
+          "@type": "Person",
+          "name": "John Carmack",
+          "url": "https://johncarmack.com/",
+          "sameAs": ["https://github.com/johncarmack1984"]
+        }
+      }
+    </script>
+
     <style>
       html, body, #app { margin: 0; height: 100%; width: 100%; overflow: hidden; }
       #app { background: #0b1020; }
@@ -15,7 +57,47 @@
     </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- Static shell: real content for crawlers and LLM answer engines (the
+           served HTML is otherwise an empty mount), and the loading state for
+           people. Deck appends its canvas rather than clearing the container,
+           so main.ts removes this node explicitly before creating the Deck. -->
+      <div
+        id="shell"
+        style="
+          min-height: 100%;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 24px;
+          color: #cdd6f4;
+          font: 15px/1.65 system-ui, -apple-system, 'Segoe UI', sans-serif;
+        "
+      >
+        <main style="max-width: 620px">
+          <h1 style="margin: 0 0 12px; font-size: 24px; line-height: 1.3; color: #fff">
+            deck-wind-layer: an animated WebGL wind map layer for deck.gl v9
+          </h1>
+          <p style="margin: 0 0 12px">
+            A small MIT npm package that renders a Windy-style wind field: particles
+            advected on the GPU through a u/v wind texture, drawn as fading comet
+            trails, projected through deck's project32 so they stay glued to the map
+            at any zoom or pan. On-screen particle density holds constant as you zoom.
+          </p>
+          <p style="margin: 0 0 12px">
+            <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px">npm i deck-wind-layer</code>
+            &middot;
+            <a href="https://github.com/johncarmack1984/deck-wind-layer" style="color: #8ab8ff">GitHub</a>
+            &middot;
+            <a href="https://www.npmjs.com/package/deck-wind-layer" style="color: #8ab8ff">npm</a>
+            &middot; by
+            <a href="https://johncarmack.com" style="color: #8ab8ff">John Carmack</a>
+          </p>
+          <p style="margin: 0; color: #8b93a1">Loading the demo&hellip;</p>
+        </main>
+      </div>
+    </div>
     <div id="hud">deck-wind-layer — drag/scroll to test camera-sync</div>
     <script type="module" src="/main.ts"></script>
   </body>
